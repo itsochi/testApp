@@ -30,7 +30,7 @@ async function searchApi(query, offset, limit) {
 // ./helpers/templates
 
 const templateSearch = async (query, offset = 0, limit = 4) => {
-	const searchResult = await search(query, offset, limit);
+	const searchResult = await searchApi(query, offset, limit);
 	if (searchResult.collection.length < 1) return 'Nothing Found Sorry, no products matched your criteria';
 	return {
 		elements: searchResult.collection.map(i => ({
